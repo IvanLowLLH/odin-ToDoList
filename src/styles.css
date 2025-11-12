@@ -40,5 +40,18 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content-header {
+    padding: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
 }
