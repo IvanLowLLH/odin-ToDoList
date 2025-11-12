@@ -1,0 +1,44 @@
+:root {
+    --text-font: "Roboto",
+        "Arial",
+        sans-serif;
+    --sidebar-color: rgb(252, 250, 248);
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: var(--text-font);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+    background-color: var(--sidebar-color);
+    grid-column: 1 / 2;
+    padding: 20px;
+}
+
+.project-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
