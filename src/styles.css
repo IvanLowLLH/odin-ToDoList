@@ -62,6 +62,7 @@ html {
   gap: 50px;
   justify-content: start;
   padding: 50px;
+  align-items: start;
 }
 
 .toDo-card {
@@ -108,7 +109,7 @@ html {
 /* Always aligned due date text */
 .toDo-due-date {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   align-self: flex-start; /* ensures consistent alignment */
 }
@@ -117,22 +118,19 @@ html {
 .card-description {
   max-height: 0; /* Height is 0 implies hidden */
   overflow: hidden; /* Hide content that exceeds the height */
-  padding: 0 15px; /* Horizontal padding only to start */
-  transition: max-height 0.3s ease-out, padding 0.2s ease;
-  background-color: #f9f9f9;
+  padding: 0; /* Horizontal padding only to start */
+  transition: max-height 0.3s ease-out 0.2s ease;
   text-align: left;
 }
 
 /* 3. The 'Active' state (This class is added by JS) */
 .toDo-card.active .card-description {
   max-height: 200px; /* Set a max-height large enough to fit content */
-  padding: 15px; /* Restore vertical padding */
 }
 
 /* 4. Interactive Trigger Styling */
 .card-bottom {
   cursor: pointer;
-  background: #eee;
   padding: 10px;
   text-align: center;
   user-select: none;
