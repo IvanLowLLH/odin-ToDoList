@@ -14,6 +14,14 @@ function renderCurrentProjectToDos() {
         
         // ADD card expansion and delete button
         toDoCard.innerHTML = `
+            <div 
+                class="priority-bar" 
+                style="--priority-color: ${
+                toDo.priority === 3 ? '#ff6961' : 
+                toDo.priority === 2 ? '#ffb347' : 
+                '#77dd77'
+                }"
+            ></div>
             <div class="card-top">
                 <h1 class="toDo-title">${toDo.title}</h1>
                 <p class="toDo-due-date">Due Date: ${toDo.dueDate}</p>

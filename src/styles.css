@@ -59,19 +59,28 @@ html {
 #todo-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
-  gap: 50px;                /* 50px gap between items (row + column) */
-  justify-content: start;   /* or center / space-between */
-  /* optional visual */
+  gap: 50px;
+  justify-content: start;
   padding: 50px;
 }
 
 .toDo-card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid grey;
-    border-radius: 20px;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 20px;
+  justify-content: space-between;
+  padding: 0px;
+  background: white;
+  overflow: hidden; /* keeps trapezium inside rounded corners */
+  position: relative;
+}
+
+/* simple rectangular priority bar */
+.priority-bar {
+  width: 100%;
+  height: 15px; /* adjust thickness as desired */
+  background-color: var(--priority-color);
 }
 
 .card-top {
@@ -79,6 +88,7 @@ html {
     flex-direction: column;
     justify-content: space-between;
     min-height: 5rem; /* keeps consistent height */
+    padding: 10px;
 }
 
 /* Limit title to 2 lines, truncate overflow with ellipsis */
