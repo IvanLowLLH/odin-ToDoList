@@ -27,9 +27,21 @@ function renderCurrentProjectToDos() {
                 <p class="toDo-due-date">Due Date: ${toDo.dueDate}</p>
             </div>
             <div class="card-bottom">
-                <p>Placeholder for more details.</p>
+                <div class="card-description">
+                    <p>Description: ${toDo.description}</p>
+                </div>
+
+                <div class="card-bottom details-btn">
+                    Details <span class="arrow">&gt;</span>
+                </div>
             </div>
         `;
+        const detailsBtn = toDoCard.querySelector('.details-btn');
+        
+        detailsBtn.addEventListener('click', () => {
+            // Toggle the active class on the parent card
+            toDoCard.classList.toggle('active');
+        });
         todoListContainer.appendChild(toDoCard);
     })
 };

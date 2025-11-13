@@ -112,3 +112,38 @@ html {
   color: #555;
   align-self: flex-start; /* ensures consistent alignment */
 }
+
+/* 2. The Description starts hidden */
+.card-description {
+  max-height: 0; /* Height is 0 implies hidden */
+  overflow: hidden; /* Hide content that exceeds the height */
+  padding: 0 15px; /* Horizontal padding only to start */
+  transition: max-height 0.3s ease-out, padding 0.2s ease;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+/* 3. The 'Active' state (This class is added by JS) */
+.toDo-card.active .card-description {
+  max-height: 200px; /* Set a max-height large enough to fit content */
+  padding: 15px; /* Restore vertical padding */
+}
+
+/* 4. Interactive Trigger Styling */
+.card-bottom {
+  cursor: pointer;
+  background: #eee;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when active */
+.toDo-card.active .arrow {
+  transform: rotate(90deg);
+}
