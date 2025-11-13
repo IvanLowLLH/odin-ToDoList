@@ -55,3 +55,25 @@ html {
     align-items: center;
     gap: 50px;
 }
+
+#todo-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 50px;                /* 50px gap between items (row + column) */
+  justify-content: start;   /* or center / space-between */
+  /* optional visual */
+  padding: 50px;
+}
+
+.toDo-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 20px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.toDo-title {
+    font-size: 30px;
+}
