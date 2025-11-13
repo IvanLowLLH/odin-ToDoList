@@ -17,6 +17,26 @@ export function initialiseApp() {
     }
 }
 
+export function initialiseAppWithDummy() {
+    // Placeholder to-dos
+    _createDefaultProject();
+    const toDoData = {
+        title: "Finish Odin Project",
+        description: "Continue JavaScript training",
+        dueDate: "15/12/2025",
+        priority: "Urgent"
+    };
+
+    const toDoData2 = {
+        title: "Read documentation on JS classes",
+        description: "",
+        dueDate: "15/11/2025",
+        priority: "Not Urgent"
+    };
+    addToDoToCurrentProject(toDoData);
+    addToDoToCurrentProject(toDoData2);
+}
+
 export function addProject(name) {
     const project = new Project(name);
     projects.push(project);
@@ -34,4 +54,8 @@ export function addToDoToCurrentProject(todoData) {
 
 export function getProjects() {
     return projects;
+}
+
+export function getToDosFromCurrentProject() {
+    return currentProject.toDos;
 }
