@@ -74,6 +74,31 @@ html {
     padding: 10px;
 }
 
+.card-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 5rem; /* keeps consistent height */
+}
+
+/* Limit title to 2 lines, truncate overflow with ellipsis */
 .toDo-title {
-    font-size: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+  max-height: calc(1.3em * 2); /* ensures consistent height */
+}
+
+/* Always aligned due date text */
+.toDo-due-date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  align-self: flex-start; /* ensures consistent alignment */
 }
