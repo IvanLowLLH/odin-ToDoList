@@ -1,8 +1,9 @@
 import * as appLogic from './appLogic.js';
 import trashIcon from './imgs/trash-can-outline.svg'
 
+const todoListContainer = document.querySelector('#todo-card-container');
+
 function renderCurrentProjectToDos() {
-    const todoListContainer = document.querySelector('#todo-card-container');
     todoListContainer.innerHTML = ''; // Clear current list
 
     // ADD sorting for priority and date
@@ -14,7 +15,6 @@ function renderCurrentProjectToDos() {
 };
 
 function renderNewToDo(toDo) {
-    const todoListContainer = document.querySelector('#todo-card-container');
     const toDoCard = document.createElement("div");
     toDoCard.setAttribute("id", toDo.id);
     toDoCard.classList.add("toDo-card");
@@ -53,8 +53,7 @@ function renderNewToDo(toDo) {
 }
 
 function setupToDoCardEventListeners() {
-    const ToDoContainer = document.querySelector("#todo-card-container");
-    ToDoContainer.addEventListener("click", (event) => {
+    todoListContainer.addEventListener("click", (event) => {
         const target = event.target;
         const card = target.closest(".toDo-card");
 
