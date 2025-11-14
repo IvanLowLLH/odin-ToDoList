@@ -100,6 +100,7 @@ function setupAddToDoEvent() {
     })
 
     // Get form values
+    const form = dialog.querySelector(".add-form");
     const confirmBtn = document.querySelector("#confirm-btn");
     const toDoTitleInput = document.querySelector("#todo-title-form");
     const toDoDueDateInput = document.querySelector("#todo-due-date-form");
@@ -117,12 +118,7 @@ function setupAddToDoEvent() {
         renderNewToDo(newTodo);
 
         // Clear form fields
-        const inputElements = dialog.querySelectorAll('input, textarea, select');
-        inputElements.forEach(element => {
-            if (element.type !== 'submit' && element.type !== 'button' && element.type !== 'radio') {
-                element.value = '';
-            }
-        });
+        form.reset();
 
         dialog.close();
     })
