@@ -36,11 +36,23 @@ html {
     align-items: center;
 }
 
-.project-list {
+#project-list {
+  margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 50px;
+}
 
+.project-btn {
+    background: none!important;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+    /*optional*/
+    /*input has OS specific font-family*/
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Form dialog */

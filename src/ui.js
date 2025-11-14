@@ -126,8 +126,9 @@ function renderProjectList() {
 }
 
 function renderProjectItem(project) {
-    const projectItem = document.createElement("p");
+    const projectItem = document.createElement("button");
     projectItem.textContent = project.name;
+    projectItem.classList.add("project-btn");
     projectListContainer.appendChild(projectItem);
 }
 
