@@ -21,7 +21,8 @@ function renderNewToDo(toDo) {
 
     //Format date
     const date = new Date(toDo.dueDate); // Or your specific date object
-    const formattedDate = date.toLocaleDateString('en-GB'); 
+    const formattedDueDateDate = date.toLocaleDateString('en-GB'); 
+    const formattedDateAdded = toDo.dateAdded.toLocaleDateString('en-GB'); 
 
     toDoCard.innerHTML = `
         <div 
@@ -38,8 +39,8 @@ function renderNewToDo(toDo) {
                 <img class="trash-icon">
             </button>
         </div>
-        <p class="toDo-due-date">Due Date: ${formattedDate}</p>
-        
+        <p class="toDo-due-date">Due Date: ${formattedDueDateDate}</p>
+        <p class="toDo-due-date">Date Added: ${formattedDateAdded}</p>
         <div class="card-bottom">
             <div class="card-description">
                 <p>Description: ${toDo.description}</p>
