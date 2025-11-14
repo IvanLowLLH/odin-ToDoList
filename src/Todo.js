@@ -4,6 +4,7 @@ class ToDo {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.id = crypto.randomUUID();
         this.complete = false;
     }
 }
