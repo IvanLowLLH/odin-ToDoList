@@ -53,7 +53,8 @@ export function addToDoToCurrentProject(todoData) {
     todoData.priority,
     todoData.dateAdded,
   );
-  currentProject.addToDo(newTodo);
+    currentProject.addToDo(newTodo);
+    return newTodo;
 }
 
 export function getProjects() {

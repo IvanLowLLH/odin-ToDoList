@@ -21,6 +21,7 @@ function renderCurrentProjectToDos() {
 };
 
 function renderNewToDo(toDo) {
+    // Setup ToDo card
     const toDoCard = document.createElement("div");
     toDoCard.setAttribute("id", toDo.id);
     toDoCard.classList.add("toDo-card");
@@ -57,12 +58,14 @@ function renderNewToDo(toDo) {
             </div>
         </div>
     `;
+    // Add trash icon img
     const trashBtnImg = toDoCard.querySelector('.trash-icon');
     trashBtnImg.src = trashIcon;
     todoListContainer.appendChild(toDoCard);
 }
 
 function setupToDoCardEventListeners() {
+    // Setup event listeners in To-Do cards
     todoListContainer.addEventListener("click", (event) => {
         const target = event.target;
         const card = target.closest(".toDo-card");
@@ -71,6 +74,7 @@ function setupToDoCardEventListeners() {
         if (card) {
             const card_id = card.id;
             if (target.classList.contains("delete-btn") || target.closest(".delete-btn")) {
+                // Remove card from HTML and backend
                 const cardToRemove = document.getElementById(card_id);
                 if (cardToRemove) {
                     cardToRemove.remove();
@@ -90,10 +94,12 @@ function setupToDoCardEventListeners() {
 function setupAddToDoEvent() {
     const addToDoBtn = document.querySelector("#add-todo-btn");
     const dialog = document.querySelector("dialog");
+    // Show form dialog
     addToDoBtn.addEventListener("click", () => {
         dialog.showModal();
     })
 
+    // Get form values
     const confirmBtn = document.querySelector("#confirm-btn");
     const toDoTitleInput = document.querySelector("#todo-title-form");
     const toDoDueDateInput = document.querySelector("#todo-due-date-form");
@@ -107,8 +113,8 @@ function setupAddToDoEvent() {
             dueDate: toDoDueDateInput.value,
             priority: priorityInput.value
         };
-        appLogic.addToDoToCurrentProject(toDoData);
-        renderNewToDo(appLogic.getToDosFromCurrentProject().at(-1));
+        const newTodo = appLogic.addToDoToCurrentProject(toDoData);
+        renderNewToDo(newTodo);
 
         // Clear form fields
         const inputElements = dialog.querySelectorAll('input, textarea, select');
