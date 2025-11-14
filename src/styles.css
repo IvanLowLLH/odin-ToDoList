@@ -43,6 +43,18 @@ html {
 
 }
 
+/* Form dialog */
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .content {
     display: flex;
     flex-direction: column;

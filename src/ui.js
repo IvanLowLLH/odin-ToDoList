@@ -73,7 +73,16 @@ function setupToDoCardEventListeners() {
     })
 }
 
+function setupAddToDoEvent() {
+    const addToDoBtn = document.querySelector("#add-todo-btn");
+    const dialog = document.querySelector("dialog");
+    addToDoBtn.addEventListener("click", () => {
+        dialog.showModal();
+    })
+}
+
 export function loadUI() {
     renderCurrentProjectToDos();
-    setupToDoCardEventListeners()
+    setupToDoCardEventListeners();
+    setupAddToDoEvent();
 }
