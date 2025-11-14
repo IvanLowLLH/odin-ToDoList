@@ -9,6 +9,11 @@ function renderCurrentProjectToDos() {
 
     // ADD sorting for priority and date
 
+    //Render project Header
+    const projectHeader = document.querySelector("#project-content-title");
+    projectHeader.textContent = appLogic.getCurrentProjectName();
+
+    // Render ToDos
     const toDos = appLogic.getToDosFromCurrentProject();
     toDos.forEach((toDo, index) => {
         renderNewToDo(toDo)

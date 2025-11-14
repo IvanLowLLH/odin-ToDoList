@@ -76,3 +76,7 @@ export function setCurrentProject(projectId) {
     const projectIndex = projects.findIndex(project => project.id === projectId);
     currentProject = projects.at(projectIndex);
 }
+
+export function getCurrentProjectName() {
+    return currentProject.name;
+}
