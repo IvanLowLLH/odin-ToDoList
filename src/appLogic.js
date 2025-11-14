@@ -59,3 +59,11 @@ export function getProjects() {
 export function getToDosFromCurrentProject() {
     return currentProject.toDos;
 }
+
+export function removeToDoFromCurrentProject(toDo_id) {
+    const projectToDos = currentProject.toDos;
+    const toDoIndex = projectToDos.findIndex(toDo => toDo.id === toDo_id);
+    if (toDoIndex > -1) {
+        currentProject.toDos.splice(toDoIndex, 1);
+    };
+}
