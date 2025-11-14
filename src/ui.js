@@ -2,6 +2,7 @@ import * as appLogic from './appLogic.js';
 import trashIcon from './imgs/trash-can-outline.svg'
 
 const todoListContainer = document.querySelector('#todo-card-container');
+const projectListContainer = document.querySelector("#project-list");
 
 function renderCurrentProjectToDos() {
     todoListContainer.innerHTML = ''; // Clear current list
@@ -116,7 +117,22 @@ function setupAddToDoEvent() {
     })
 }
 
+function renderProjectList() {
+    projectListContainer.innerHTML = "";
+    const projectList = appLogic.getProjects();
+    projectList.forEach((project) => {
+        renderProjectItem(project);
+    })
+}
+
+function renderProjectItem(project) {
+    const projectItem = document.createElement("p");
+    projectItem.textContent = project.name;
+    projectListContainer.appendChild(projectItem);
+}
+
 export function loadUI() {
+    renderProjectList();
     renderCurrentProjectToDos();
     setupToDoCardEventListeners();
     setupAddToDoEvent();

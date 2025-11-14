@@ -36,6 +36,8 @@ export function initialiseAppWithDummy() {
     };
     addToDoToCurrentProject(toDoData);
     addToDoToCurrentProject(toDoData2);
+
+    addProject("Test Project");
 }
 
 export function addProject(name) {
