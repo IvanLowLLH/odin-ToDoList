@@ -14,7 +14,17 @@
             <div class="project-sidebar">
                 <div class="project-list-header">
                     <h1>Projects</h1>
-                    <button type="button" id="add-project">Add</button>
+                    <dialog id="add-project-dialog">
+                        <form id="add-project-form" class="add-form">
+                            <label for="project-name-form">Project Name</label>
+                            <input id="project-name-form" name="project-name" type="text" />
+                            <div class="form-buttons">
+                                <button value="cancel" formmethod="dialog">Cancel</button>
+                                <button id="confirm-btn-proj" value="default">Confirm</button>
+                            </div>
+                        </form>
+                    </dialog>
+                    <button type="button" id="add-project-btn">Add</button>
                 </div>
                 <div id="project-list">
                 </div>
@@ -26,7 +36,7 @@
                 <button type="button" id="add-todo-btn">New todo</button>
                 <dialog id="add-todo-form">
                     <p>Add your To-Do!</p>
-                    <form class="add-form">
+                    <form id="add-form" class="add-form">
                         <label for="todo-title-form">Title</label>
                         <input id="todo-title-form" name="todo-title" type="text" />
                         <label for="todo-due-date-form">Due Date</label>
