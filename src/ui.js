@@ -18,8 +18,11 @@ function renderNewToDo(toDo) {
     const toDoCard = document.createElement("div");
     toDoCard.setAttribute("id", toDo.id);
     toDoCard.classList.add("toDo-card");
-    
-    // ADD card expansion and delete button
+
+    //Format date
+    const date = new Date(toDo.dueDate); // Or your specific date object
+    const formattedDate = date.toLocaleDateString('en-GB'); 
+
     toDoCard.innerHTML = `
         <div 
             class="priority-bar" 
@@ -35,7 +38,7 @@ function renderNewToDo(toDo) {
                 <img class="trash-icon">
             </button>
         </div>
-        <p class="toDo-due-date">Due Date: ${toDo.dueDate}</p>
+        <p class="toDo-due-date">Due Date: ${formattedDate}</p>
         
         <div class="card-bottom">
             <div class="card-description">

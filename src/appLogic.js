@@ -23,14 +23,14 @@ export function initialiseAppWithDummy() {
     const toDoData = {
         title: "Finish Odin Project",
         description: "Continue JavaScript training",
-        dueDate: "15/12/2025",
+        dueDate: "2025-12-15",
         priority: "3"
     };
 
     const toDoData2 = {
         title: "Read documentation on JS classes",
         description: "",
-        dueDate: "15/11/2025",
+        dueDate: "2025-11-30",
         priority: "1"
     };
     addToDoToCurrentProject(toDoData);
