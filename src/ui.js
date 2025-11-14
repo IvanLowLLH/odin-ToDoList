@@ -43,13 +43,6 @@ function renderCurrentProjectToDos() {
         `;
         const trashBtnImg = toDoCard.querySelector('.trash-icon');
         trashBtnImg.src = trashIcon;
-
-        const detailsBtn = toDoCard.querySelector('.details-btn');
-        
-        detailsBtn.addEventListener('click', () => {
-            // Toggle the active class on the parent card
-            toDoCard.classList.toggle('active');
-        });
         todoListContainer.appendChild(toDoCard);
     })
 };
@@ -69,6 +62,9 @@ function setupToDoCardEventListeners() {
                     cardToRemove.remove();
                 }
                 appLogic.removeToDoFromCurrentProject(card_id);
+            } else if (target.classList.contains("details-btn") || target.closest(".details-btn")) {
+                const cardToExpand = document.getElementById(card_id);
+                cardToExpand.classList.toggle('active');
             }
         }
         else {
