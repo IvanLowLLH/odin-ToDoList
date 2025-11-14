@@ -71,3 +71,8 @@ export function removeToDoFromCurrentProject(toDo_id) {
         currentProject.toDos.splice(toDoIndex, 1);
     };
 }
+
+export function setCurrentProject(projectId) {
+    const projectIndex = projects.findIndex(project => project.id === projectId);
+    currentProject = projects.at(projectIndex);
+}

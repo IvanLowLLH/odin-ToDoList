@@ -129,11 +129,24 @@ function renderProjectItem(project) {
     const projectItem = document.createElement("button");
     projectItem.textContent = project.name;
     projectItem.classList.add("project-btn");
+    projectItem.setAttribute("id", project.id)
     projectListContainer.appendChild(projectItem);
+}
+
+function setupProjectListEventListeners() {
+    projectListContainer.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.classList.contains("project-btn")) {
+            const projectId = target.id;
+            appLogic.setCurrentProject(projectId);
+            renderCurrentProjectToDos();
+        }
+    })
 }
 
 export function loadUI() {
     renderProjectList();
+    setupProjectListEventListeners()
     renderCurrentProjectToDos();
     setupToDoCardEventListeners();
     setupAddToDoEvent();
