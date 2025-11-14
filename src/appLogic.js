@@ -43,6 +43,7 @@ export function initialiseAppWithDummy() {
 export function addProject(name) {
     const project = new Project(name);
     projects.push(project);
+    return project;
 }
 
 export function addToDoToCurrentProject(todoData) {

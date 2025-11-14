@@ -93,14 +93,14 @@ function setupToDoCardEventListeners() {
 
 function setupAddToDoEvent() {
     const addToDoBtn = document.querySelector("#add-todo-btn");
-    const dialog = document.querySelector("dialog");
+    const dialog = document.querySelector("#add-todo-form");
     // Show form dialog
     addToDoBtn.addEventListener("click", () => {
         dialog.showModal();
     })
 
     // Get form values
-    const form = dialog.querySelector(".add-form");
+    const form = dialog.querySelector("#add-form");
     const confirmBtn = document.querySelector("#confirm-btn");
     const toDoTitleInput = document.querySelector("#todo-title-form");
     const toDoDueDateInput = document.querySelector("#todo-due-date-form");
@@ -151,7 +151,30 @@ function setupProjectListEventListeners() {
     })
 }
 
+function setupAddProjectEvent() {
+    const addProjBtn = document.querySelector("#add-project-btn");
+    const addProjDialog = document.querySelector("#add-project-dialog");
+    addProjBtn.addEventListener("click", () => {
+        addProjDialog.showModal();
+    })
+
+    const form = addProjDialog.querySelector("#add-project-form");
+    const confirmProjBtn = document.querySelector("#confirm-btn-proj");
+    const projectNameInput = document.querySelector("#project-name-form");
+    confirmProjBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const newProj = appLogic.addProject(projectNameInput.value);
+        console.log(`Added ${newProj.name}`)
+        renderProjectItem(newProj);
+        console.log(`Rendered ${newProj.name}`)
+
+        form.reset();
+        addProjDialog.close();
+    })
+}
+
 export function loadUI() {
+    setupAddProjectEvent()
     renderProjectList();
     setupProjectListEventListeners()
     renderCurrentProjectToDos();
