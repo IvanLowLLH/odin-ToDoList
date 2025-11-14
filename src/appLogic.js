@@ -24,7 +24,8 @@ export function initialiseAppWithDummy() {
         title: "Finish Odin Project",
         description: "Continue JavaScript training",
         dueDate: "2025-12-15",
-        priority: "3"
+        priority: "3",
+        dateAdded: "2025-11-13"
     };
 
     const toDoData2 = {
@@ -47,7 +48,8 @@ export function addToDoToCurrentProject(todoData) {
     todoData.title, 
     todoData.description, 
     todoData.dueDate, 
-    todoData.priority
+    todoData.priority,
+    todoData.dateAdded,
   );
   currentProject.addToDo(newTodo);
 }
