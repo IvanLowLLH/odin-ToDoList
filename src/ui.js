@@ -1,4 +1,5 @@
 import * as appLogic from './appLogic.js';
+import trashIcon from './imgs/trash-can-outline.svg'
 
 function renderCurrentProjectToDos() {
     const todoListContainer = document.querySelector('#todo-card-container');
@@ -24,8 +25,12 @@ function renderCurrentProjectToDos() {
             ></div>
             <div class="card-top">
                 <h1 class="toDo-title">${toDo.title}</h1>
-                <p class="toDo-due-date">Due Date: ${toDo.dueDate}</p>
+                 <button type="button" class="delete-btn">
+                    <img class="trash-icon">
+                </button>
             </div>
+            <p class="toDo-due-date">Due Date: ${toDo.dueDate}</p>
+            
             <div class="card-bottom">
                 <div class="card-description">
                     <p>Description: ${toDo.description}</p>
@@ -36,6 +41,9 @@ function renderCurrentProjectToDos() {
                 </div>
             </div>
         `;
+        const trashBtnImg = toDoCard.querySelector('.trash-icon');
+        trashBtnImg.src = trashIcon;
+
         const detailsBtn = toDoCard.querySelector('.details-btn');
         
         detailsBtn.addEventListener('click', () => {

@@ -86,10 +86,20 @@ html {
 
 .card-top {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    min-height: 5rem; /* keeps consistent height */
+    min-height: 3rem; /* keeps consistent height */
+    align-items: center;
     padding: 10px;
+}
+
+.delete-btn {
+    border: 0px;
+    background-color: white;
+}
+
+.trash-icon {
+    height: 1.5rem;
+    object-fit: fill;
 }
 
 /* Limit title to 2 lines, truncate overflow with ellipsis */
@@ -108,6 +118,7 @@ html {
 
 /* Always aligned due date text */
 .toDo-due-date {
+  padding: 10px;
   margin: 0;
   font-size: 1rem;
   color: #555;
